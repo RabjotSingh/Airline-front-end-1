@@ -22,5 +22,4 @@ export class Flight {
         this.duration=duration;
         this.bClass=bClass;
         this.eClass=eClass;
-      }
-}
+      }}
