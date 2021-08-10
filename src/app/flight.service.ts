@@ -1,4 +1,4 @@
-import { flight } from './con-page/model/flight';
+import { Flight } from 'src/app/models/flight'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -18,9 +18,9 @@ export class flightService
 
 
   //Method to get the list of all Customers from the API.
-  getAllUsers():Observable<flight[]>
+  getAllUsers():Observable<Flight[]>
   {
-    return this.http.get<flight[]>(this.req);
+    return this.http.get<Flight[]>(this.req);
   }
   
 
