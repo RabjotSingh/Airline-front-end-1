@@ -1,4 +1,4 @@
-import { payment } from './con-page/model/payment';
+import { Payment } from './con-page/model/payment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -18,9 +18,9 @@ export class paymentService
 
 
   //Method to get the list of all Customers from the API.
-  getAllUsers():Observable<payment[]>
+  getAllUsers():Observable<Payment[]>
   {
-    return this.http.get<payment[]>(this.req);
+    return this.http.get<Payment[]>(this.req);
   }
   
 
