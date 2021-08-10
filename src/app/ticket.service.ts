@@ -1,4 +1,4 @@
-import { Ticket } from 'src/app/models/ticket';
+import { Ticket } from 'src/app/models/Ticket';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -14,7 +14,7 @@ export class ticketService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/ticket";
+ readonly req:string="https://localhost:44346/api/Ticket";
 
 
   //Method to get the list of all Customers from the API.

@@ -1,4 +1,4 @@
-import { Flight } from 'src/app/models/flight'
+import { Flight } from 'src/app/models/Flight'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -14,7 +14,7 @@ export class flightService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/flight";
+ readonly req:string="https://localhost:44346/api/Flight";
 
 
   //Method to get the list of all Customers from the API.

@@ -1,4 +1,4 @@
-import { Passenger } from 'src/app/models/passenger';
+import { Passenger } from 'src/app/models/Passenger';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -9,12 +9,12 @@ import {catchError} from 'rxjs/operators'
   providedIn: 'root'
 })
 
-export class passengerService 
+export class PassengerService 
 {
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/passenger";
+ readonly req:string="https://localhost:44346/api/Passenger";
 
 
   //Method to get the list of all Customers from the API.

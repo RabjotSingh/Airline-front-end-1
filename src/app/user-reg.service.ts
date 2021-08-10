@@ -1,4 +1,4 @@
-import { UserReg } from 'src/app/models/userreg';
+import { UserReg } from 'src/app/models/UserReg';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -14,7 +14,7 @@ export class userregService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/userreg";
+ readonly req:string="https://localhost:44346/api/UserReg";
 
 
   //Method to get the list of all Customers from the API.
