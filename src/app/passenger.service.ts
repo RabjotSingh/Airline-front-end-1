@@ -1,4 +1,4 @@
-import { flight } from './con-page/model/flight';
+import { passenger } from './con-page/model/passenger';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -9,18 +9,18 @@ import {catchError} from 'rxjs/operators'
   providedIn: 'root'
 })
 
-export class flightService 
+export class passengerService 
 {
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/flight";
+ readonly req:string="https://localhost:44346/api/payment";
 
 
   //Method to get the list of all Customers from the API.
-  getAllUsers():Observable<flight[]>
+  getAllUsers():Observable<passenger[]>
   {
-    return this.http.get<flight[]>(this.req);
+    return this.http.get<passenger[]>(this.req);
   }
   
 
