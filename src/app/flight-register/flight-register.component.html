@@ -1,0 +1,511 @@
+<div>
+
+<app-header></app-header>
+</div>
+<!--col-md-6 col-sm-6 col-lg-6-->
+
+
+<!--
+<div class="container">
+    <form [formGroup] = "FlightRegister">
+        <div class="form-group">
+            <label>Flight Number</label>
+            <input type="text" class="form-control" formControlName="flightNo" placeholder="Enter Flight Number">
+        </div>
+
+        <div class="form-group">
+            <label>From</label>
+            <input type="text" class="form-control" formControlName="from" placeholder="Enter City Name">
+        </div>
+
+        <div class="form-group">
+            <label>To</label>
+            <input type="text" class="form-control" formControlName="to" placeholder="Enter City Name">
+        </div>
+
+        <div class="form-group">
+            <label>Departure</label>
+            <input type="date" class="form-control" formControlName="departure" placeholder="Enter Date">
+        </div>
+
+        <div class="form-group">
+            <label>Arrive</label>
+            <input type="date" class="form-control" formControlName="arrive" placeholder="Enter Date">
+        </div>
+
+        <div class="form-group">
+            <label>Duration</label>
+            <input type="time" class="form-control" formControlName="duration" placeholder="Enter Flight Duration">
+        </div>
+
+        <div class="form-group">
+            <label>Economy</label>
+            <input type="number" class="form-control" formControlName="economy" placeholder="Enter Number of seats available">
+        </div>
+
+        <div class="form-group">
+            <label>Business</label>
+            <input type="number" class="form-control" formControlName="business" placeholder="Enter Number of seats available">
+        </div>
+    </form>
+</div>
+-->
+
+<div class="row" style="margin-left: auto;">
+    <div class="col-md-10 offset-md-1">
+      <span class="anchor" id="formComplex"></span>
+      <hr class="my-5">
+
+        <div class="card card-outline-secondary">
+          <div class="card-header">
+            <h3 class="mb-0">ADD FLIGHT</h3>
+          </div>
+        <div class="card-body">
+          <form [formGroup] = "FlightRegister">
+            <div class="form-group">
+          <div class="row mt-4">
+            <div class="col-sm-6 pb-3">
+              <label for="exampleflight">Flight Number</label> 
+                <input class="form-control" formControlName="flightNo" id="flightNo" placeholder="Enter Flight No (Eg: 6B-9087)" type="text">
+            </div>
+            <div class="col-sm-3 pb-3">
+              <label for="exampleBussClass">Business Class Seats</label> 
+                <input class="form-control" id="BussClass" formControlName="business" placeholder="Enter No of Seats Available" type="number">
+            </div>
+            <div class="col-sm-3 pb-3">
+                <label for="exampleEcoClass">Economy Class Seats</label> 
+                  <input class="form-control" id="EcoClass" formControlName="economy" placeholder="Enter No of Seats Available" type="number">
+              </div>
+
+              <div class="col-sm-6 pb-3">
+                <label for="exampleFlgTo">From</label> <select class="form-control custom-select" formControlName="from" id="exampleFlgTo">
+                    <option class="text-white bg-warning">
+                        Choose City
+                      </option>
+                      <option value="IXA">
+                        Agartala (IXA)
+                      </option>
+                      <option value="IXD">
+                        Allahabad (IXD)
+                      </option>
+                      <option value="IXU">
+                        Aurangabad (IXU)
+                      </option>
+                      <option value="BEK">
+                        Bareli (BEK)
+                      </option>
+                      <option value="BLR">
+                        Bengaluru (BLR)
+                      </option>
+                      <option value="BUP">
+                        Bhatinda (BUP)
+                      </option>
+                      <option value="BHO">
+                        Bhopal (BHO)
+                      </option>
+                      <option value="BBI">
+                        Bhubaneswar (BBI)
+                      </option>
+                      <option value="PAB">
+                        Bilaspur (PAB)
+                      </option>
+                      <option value="BKB">
+                        Bikaner (BKB)
+                      </option>
+                      <option value="IXC">
+                        Chandigarh (IXC)
+                      </option>
+                      <option value="MAA">
+                        Chennai (MAA)
+                      </option>
+                      <option value="COK">
+                        Cochin (COK)
+                      </option>
+                      <option value="CJB">
+                        Coimbatore (CJB)
+                      </option>
+                      <option value="IXB">
+                        Darjeeling (IXB)
+                      </option>
+                      <option value="DED">
+                        Dehradun (DED)
+                      </option>
+                      <option value="DEL">
+                        Delhi (DEL)
+                      </option>
+                      <option value="DBD">
+                        Dhanbad (DBD)
+                      </option>
+                      <option value="GOI">
+                        Goa (GOI)
+                      </option>
+                      <option value="GOP">
+                        Gorakhpur (GOP)
+                      </option>
+                      <option value="GAU">
+                        Guwahati (GAU)
+                      </option>
+                      <option value="GWL">
+                        Gwalior (GWL)
+                      </option>
+                      <option value="HYD">
+                        Hyderabad (HYD)
+                      </option>
+                      <option value="IDR">
+                        Indore (IDR)
+                      </option>
+                      <option value="JLR">
+                        Jabalpur (JLR)
+                      </option>
+                      <option value="JAI">
+                        Jaipur (JAI)
+                      </option>
+                      <option value="JSA">
+                        Jaisalmer (JSA)
+                      </option>
+                      <option value="IXJ">
+                        Jammu (IXJ)
+                      </option>
+                      <option value="IXW">
+                        Jamshedpur (IXW)
+                      </option>
+                      <option value="JDH">
+                        Jodhpur (JDH)
+                      </option>
+                      <option value="CNN">
+                        Kannur (CNN)
+                      </option>
+                      <option value="KNU">
+                        Kanpur (KNU)
+                      </option>
+                      <option value="KLH">
+                        Kolhapur (KLH)
+                      </option>
+                      <option value="CCU">
+                        Kolkata (CCU)
+                      </option>
+                      <option value="KTU">
+                        Kota (KTU)
+                      </option>
+                      <option value="LKO">
+                        Lucknow (LKO)
+                      </option>
+                      <option value="LUH">
+                        Ludhiana (LUH)
+                      </option>
+                      <option value="IXM">
+                        Madurai (IXM)
+                      </option>
+                      <option value="IXE">
+                        Mangalore (IXE)
+                      </option>
+                      <option value="BOM">
+                        Mumbai (BOM)
+                      </option>
+                      <option value="MYQ">
+                        Mysore (MYQ)
+                      </option>
+                      <option value="NAG">
+                        Nagpur (NAG)
+                      </option>
+                      <option value="NDC">
+                        Nanded (NDC)
+                      </option>
+                      <option value="PAT">
+                        Patna (PAT)
+                      </option>
+                      <option value="PBD">
+                        Porbandar (PBD)
+                      </option>
+                      <option value="PNQ">
+                        Pune (PNQ)
+                      </option>
+                      <option value="RPR">
+                        Raipur (RPR)
+                      </option>
+                      <option value="RAJ">
+                        Rajkot (RAJ)
+                      </option>
+                      <option value="IXR">
+                        Ranchi (IXR)
+                      </option>
+                      <option value="RTC">
+                        Ratnagiri (RTC)
+                      </option>
+                      <option value="SLV">
+                        Shimla (SLV)
+                      </option>
+
+                      <option value="SXR">
+                        Srinagar (SXR)
+                      </option>
+                      <option value="STV">
+                        Surat (STV)
+                      </option>
+                      <option value="TRV">
+                        Thiruvananthapuram (TRV)
+                      </option>
+                      <option value="TIR">
+                        Tirupati (TIR)
+                      </option>
+                      <option value="UDR">
+                        Udaipur (UDR)
+                      </option>
+                      <option value="BDQ">
+                        Vadodara (BDQ)
+                      </option>
+
+                      <option value="VNS">
+                        Varanasi (VNS)
+                      </option>
+                      <option value="VTZ">
+                        Vishakhapatnam (VTZ)
+                      </option>
+                      
+                    </select>
+                    </div>
+            
+            <div class="col-sm-6 pb-3">
+                <label for="exampleFlgTo">To</label> <select class="form-control custom-select" formControlName="to" id="exampleFlgTo">
+                  <option class="text-white bg-warning">
+                    Choose City
+                  </option>
+                  <option value="IXA">
+                    Agartala (IXA)
+                  </option>
+                  <option value="IXD">
+                    Allahabad (IXD)
+                  </option>
+                  <option value="IXU">
+                    Aurangabad (IXU)
+                  </option>
+                  <option value="BEK">
+                    Bareli (BEK)
+                  </option>
+                  <option value="BLR">
+                    Bengaluru (BLR)
+                  </option>
+                  <option value="BUP">
+                    Bhatinda (BUP)
+                  </option>
+                  <option value="BHO">
+                    Bhopal (BHO)
+                  </option>
+                  <option value="BBI">
+                    Bhubaneswar (BBI)
+                  </option>
+                  <option value="PAB">
+                    Bilaspur (PAB)
+                  </option>
+                  <option value="BKB">
+                    Bikaner (BKB)
+                  </option>
+                  <option value="IXC">
+                    Chandigarh (IXC)
+                  </option>
+                  <option value="MAA">
+                    Chennai (MAA)
+                  </option>
+                  <option value="COK">
+                    Cochin (COK)
+                  </option>
+                  <option value="CJB">
+                    Coimbatore (CJB)
+                  </option>
+                  <option value="IXB">
+                    Darjeeling (IXB)
+                  </option>
+                  <option value="DED">
+                    Dehradun (DED)
+                  </option>
+                  <option value="DEL">
+                    Delhi (DEL)
+                  </option>
+                  <option value="DBD">
+                    Dhanbad (DBD)
+                  </option>
+                  <option value="GOI">
+                    Goa (GOI)
+                  </option>
+                  <option value="GOP">
+                    Gorakhpur (GOP)
+                  </option>
+                  <option value="GAU">
+                    Guwahati (GAU)
+                  </option>
+                  <option value="GWL">
+                    Gwalior (GWL)
+                  </option>
+                  <option value="HYD">
+                    Hyderabad (HYD)
+                  </option>
+                  <option value="IDR">
+                    Indore (IDR)
+                  </option>
+                  <option value="JLR">
+                    Jabalpur (JLR)
+                  </option>
+                  <option value="JAI">
+                    Jaipur (JAI)
+                  </option>
+                  <option value="JSA">
+                    Jaisalmer (JSA)
+                  </option>
+                  <option value="IXJ">
+                    Jammu (IXJ)
+                  </option>
+                  <option value="IXW">
+                    Jamshedpur (IXW)
+                  </option>
+                  <option value="JDH">
+                    Jodhpur (JDH)
+                  </option>
+                  <option value="CNN">
+                    Kannur (CNN)
+                  </option>
+                  <option value="KNU">
+                    Kanpur (KNU)
+                  </option>
+                  <option value="KLH">
+                    Kolhapur (KLH)
+                  </option>
+                  <option value="CCU">
+                    Kolkata (CCU)
+                  </option>
+                  <option value="KTU">
+                    Kota (KTU)
+                  </option>
+                  <option value="LKO">
+                    Lucknow (LKO)
+                  </option>
+                  <option value="LUH">
+                    Ludhiana (LUH)
+                  </option>
+                  <option value="IXM">
+                    Madurai (IXM)
+                  </option>
+                  <option value="IXE">
+                    Mangalore (IXE)
+                  </option>
+                  <option value="BOM">
+                    Mumbai (BOM)
+                  </option>
+                  <option value="MYQ">
+                    Mysore (MYQ)
+                  </option>
+                  <option value="NAG">
+                    Nagpur (NAG)
+                  </option>
+                  <option value="NDC">
+                    Nanded (NDC)
+                  </option>
+                  <option value="PAT">
+                    Patna (PAT)
+                  </option>
+                  <option value="PBD">
+                    Porbandar (PBD)
+                  </option>
+                  <option value="PNQ">
+                    Pune (PNQ)
+                  </option>
+                  <option value="RPR">
+                    Raipur (RPR)
+                  </option>
+                  <option value="RAJ">
+                    Rajkot (RAJ)
+                  </option>
+                  <option value="IXR">
+                    Ranchi (IXR)
+                  </option>
+                  <option value="RTC">
+                    Ratnagiri (RTC)
+                  </option>
+                  <option value="SLV">
+                    Shimla (SLV)
+                  </option>
+
+                  <option value="SXR">
+                    Srinagar (SXR)
+                  </option>
+                  <option value="STV">
+                    Surat (STV)
+                  </option>
+                  <option value="TRV">
+                    Thiruvananthapuram (TRV)
+                  </option>
+                  <option value="TIR">
+                    Tirupati (TIR)
+                  </option>
+                  <option value="UDR">
+                    Udaipur (UDR)
+                  </option>
+                  <option value="BDQ">
+                    Vadodara (BDQ)
+                  </option>
+
+                  <option value="VNS">
+                    Varanasi (VNS)
+                  </option>
+                  <option value="VTZ">
+                    Vishakhapatnam (VTZ)
+                  </option>
+                    </select>
+                    </div>
+            </div>
+
+            <div class="row mt-4">
+            <div class="col-sm-6 pb-3">
+                <label for="exampleDep"><strong>Departure</strong></label> 
+                  <input class="form-control" id="Dep" placeholder="Choose Date and Time" formControlName="departure" type="datetime-local">
+              </div>
+
+              <div class="col-sm-6 pb-3">
+                <label for="exampleArv"><strong>Arrival</strong></label> 
+                  <input class="form-control" id="Arv" placeholder="Choose Date and Time" formControlName="arrive" type="datetime-local">
+              </div>
+
+              </div>
+              <div class="row mt-4">
+              <div class="col-sm-6 pb-3">
+                <label for="exampleDuration">Duration</label> 
+                  <input class="form-control" id="Duration" placeholder="Duration of Flight" formControlName="duration" type="time">
+              </div>
+            </div>
+            
+
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                      <button class="btn btn-default btn-lg btn-block" type="reset">Cancel</button>
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-success btn-lg btn-block" type="submit">Add Flight</button>
+                    </div>
+                  </div>
+
+                  
+
+
+                </div>
+                </form>
+                </div>
+                
+                <div class="row mt-12">
+                <div class="col-md-12">
+                  <button class="btn btn-danger btn-lg btn-block" routerLink="/DeleteFlight" type="submit">Click here to delete any flight</button>
+                </div>
+                </div>
+<app-footer></app-footer>
+
+                
+              
+              
+              
+            
+         
+       
+         
+          
+        
+     
+    

@@ -1,0 +1,31 @@
+.container {
+    margin-top: 70px; 
+    background-color: #F2EEED;
+    max-width: 100%;
+    height: 180px;
+    border: 2px solid #000;
+    padding-top: 20px;
+    padding-left: 40px;
+    
+    
+}
+
+.col-lg-2 {
+    margin-right: 10px;
+}
+
+.col-lg-1 {
+    
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 550px;
+    margin-top: 15px;
+}
+
+button {
+    width: 200px;
+    background-color: black;
+}
+
