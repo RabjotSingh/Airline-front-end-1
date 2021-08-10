@@ -1,4 +1,4 @@
-import { userreg } from './con-page/model/userreg';
+import { UserReg } from 'src/app/models/userreg';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -18,9 +18,9 @@ export class userregService
 
 
   //Method to get the list of all Customers from the API.
-  getAllUsers():Observable<userreg[]>
+  getAllUsers():Observable<UserReg[]>
   {
-    return this.http.get<userreg[]>(this.req);
+    return this.http.get<UserReg[]>(this.req);
   }
   
 

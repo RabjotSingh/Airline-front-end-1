@@ -1,4 +1,4 @@
-import { ticket } from './con-page/model/ticket';
+import { Ticket } from 'src/app/models/ticket';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -18,9 +18,9 @@ export class ticketService
 
 
   //Method to get the list of all Customers from the API.
-  getAllUsers():Observable<ticket[]>
+  getAllUsers():Observable<Ticket[]>
   {
-    return this.http.get<ticket[]>(this.req);
+    return this.http.get<Ticket[]>(this.req);
   }
   
 

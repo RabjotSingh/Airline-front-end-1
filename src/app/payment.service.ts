@@ -1,4 +1,4 @@
-import { Payment } from './con-page/model/payment';
+import { Payment } from 'src/app/models/payment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
