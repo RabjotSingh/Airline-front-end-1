@@ -15,7 +15,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
-import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { PassengerDetailsComponent } from './passenger-details/passenger-details
     PaymentPageComponent,
     HomeComponent,
     ConfirmationPageComponent,
-    PassengerDetailsComponent
+ 
     
    
   ],
