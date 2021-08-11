@@ -20,46 +20,45 @@ export class ticketService
   {
     return this.http.get<Ticket[]>(this.req);
   }
-  
 
-//   //Method  to create a new Ticket.
-//   createUser(Ticket:Ticket[]):Observable<Ticket[]>z
-//   {
-//     return this.http.post<Ticket>(this.req,Ticket,{
-//       headers:new HttpHeaders({
-//         'Content-Type':'application/json;charset=UTF-8',
-//         'Access-Control-Allow-Origin':'*',
-//         'Access-Control-Allow-Method':'*'
+  //Method  to create a new Ticket.
+  createUser(Ticket:Ticket[]):Observable<Ticket[]>
+  {
+    return this.http.post<Ticket[]>(this.req,Ticket,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
         
-//       })
-//     });
-//   }
+      })
+    });
+  }
 
-//   //Method to update an existing Ticket.
-//   updateUser(id:number,Ticket:Ticket):Observable<any>
-//   {
+  //Method to update an existing Ticket.
+  updateUser(id:number,Ticket:Ticket[]):Observable<any>
+  {
     
-//     return this.http.put<any>(this.req+"/"+id,Ticket,{
-//       headers:new HttpHeaders({
-//         'Content-Type':'application/json;charset=UTF-8',
-//         'Access-Control-Allow-Origin':'*',
-//         'Access-Control-Allow-Method':'*'
-//       })
-//     });
-//   }
+    return this.http.put<any>(this.req+"/"+id,Ticket,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 
 
-//   //Method to delete an existing Ticket.
-//   deleteUser(id:number):Observable<any>
-//   {
-//     return this.http.delete<any>(this.req+"/"+id,{
-//       headers:new HttpHeaders({
-//         'Content-Type':'application/json;charset=UTF-8',
-//         'Access-Control-Allow-Origin':'*',
-//         'Access-Control-Allow-Method':'*'
-//       })
-//     });
-//   }
+  //Method to delete an existing Ticket.
+  deleteUser(id:number):Observable<any>
+  {
+    return this.http.delete<any>(this.req+"/"+id,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 
 
 }

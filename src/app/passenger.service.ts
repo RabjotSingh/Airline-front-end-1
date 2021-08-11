@@ -22,64 +22,44 @@ export class PassengerService
   }
   
 
-  // //Method  to create a new Customer.
-  // createUser(Customer:Customer):Observable<Customer>z
-  // {
-  //   return this.http.post<Customer>(this.req,Customer,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
+  //Method  to create a new Passenger.
+  createUser(Passenger:Passenger[]):Observable<Passenger[]>
+  {
+    return this.http.post<Passenger[]>(this.req,Passenger,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
         
-  //     })
-  //   });
-  // }
+      })
+    });
+  }
 
-  // //Method to update an existing Customer.
-  // updateUser(id:number,Customer:Customer):Observable<any>
-  // {
+  //Method to update an existing Passenger.
+  updateUser(id:number,Passenger:Passenger[]):Observable<any>
+  {
     
-  //   return this.http.put<any>(this.req+"/"+id,Customer,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-  //     })
-  //   });
-  // }
+    return this.http.put<any>(this.req+"/"+id,Passenger,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 
 
-  // //Method to delete an existing Customer.
-  // deleteUser(id:number):Observable<any>
-  // {
-  //   return this.http.delete<any>(this.req+"/"+id,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-  //     })
-  //   });
-  // }
+  //Method to delete an existing Passenger.
+  deleteUser(id:number):Observable<any>
+  {
+    return this.http.delete<any>(this.req+"/"+id,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 
-  // //Method to test error handling.
-  // register():Observable<any>
-  // {
-  //   //Giving incorrect URL.
-  //   return this.http.get<any>('https://localhost:44311/api/Customers')
-  //          .pipe(catchError(this.manageError));
-  // }
-  
-
-  // //Method to handle errors.
-  // private manageError(err_response:HttpErrorResponse)
-  // {
-  //   if(err_response.error instanceof ErrorEvent)
-  //   console.error('Client Side Error:',err_response.error.message);
-  //   else
-  //   console.error('Server Side Error:',err_response);
-
-  //   return throwError('There is a little problem while processing your request.Sorry for the inconvenience');
-    
-  // }
 
 }

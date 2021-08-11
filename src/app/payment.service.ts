@@ -22,10 +22,10 @@ export class paymentService
   }
   
 
-  // //Method  to create a new Customer.
-  createUser(player:Player):Observable<Player>
+  //Method  to create a new Payment.
+  createUser(Payment:Payment[]):Observable<Payment[]>
   {
-    return this.http.post<Player>(this.req,player,{
+    return this.http.post<Payment[]>(this.req,Payment,{
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin':'*',
@@ -35,51 +35,29 @@ export class paymentService
     });
   }
 
-  // //Method to update an existing Customer.
-  // updateUser(id:number,Customer:Customer):Observable<any>
-  // {
+  //Method to update an existing Payment.
+  updateUser(id:number,Payment:Payment[]):Observable<any>
+  {
     
-  //   return this.http.put<any>(this.req+"/"+id,Customer,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-  //     })
-  //   });
-  // }
+    return this.http.put<any>(this.req+"/"+id,Payment,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 
 
-  // //Method to delete an existing Customer.
-  // deleteUser(id:number):Observable<any>
-  // {
-  //   return this.http.delete<any>(this.req+"/"+id,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-  //     })
-  //   });
-  // }
-
-  // //Method to test error handling.
-  // register():Observable<any>
-  // {
-  //   //Giving incorrect URL.
-  //   return this.http.get<any>('https://localhost:44311/api/Customers')
-  //          .pipe(catchError(this.manageError));
-  // }
-  
-
-  // //Method to handle errors.
-  // private manageError(err_response:HttpErrorResponse)
-  // {
-  //   if(err_response.error instanceof ErrorEvent)
-  //   console.error('Client Side Error:',err_response.error.message);
-  //   else
-  //   console.error('Server Side Error:',err_response);
-
-  //   return throwError('There is a little problem while processing your request.Sorry for the inconvenience');
-    
-  // }
-
+  //Method to delete an existing Payment.
+  deleteUser(id:number):Observable<any>
+  {
+    return this.http.delete<any>(this.req+"/"+id,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 }

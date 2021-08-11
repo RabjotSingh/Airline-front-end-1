@@ -15,71 +15,52 @@ export class userregService
  readonly req:string="https://localhost:44346/api/UserReg";
 
 
-  //Method to get the list of all Customers from the API.
+  //Method to get the list of all Users from the API.
   getAllUsers():Observable<UserReg[]>
   {
     return this.http.get<UserReg[]>(this.req);
   }
   
 
-  // //Method  to create a new Customer.
-  // createUser(Customer:Customer):Observable<Customer>z
-  // {
-  //   return this.http.post<Customer>(this.req,Customer,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-        
-  //     })
-  //   });
-  // }
-
-  // //Method to update an existing Customer.
-  // updateUser(id:number,Customer:Customer):Observable<any>
-  // {
-    
-  //   return this.http.put<any>(this.req+"/"+id,Customer,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-  //     })
-  //   });
-  // }
-
-
-  // //Method to delete an existing Customer.
-  // deleteUser(id:number):Observable<any>
-  // {
-  //   return this.http.delete<any>(this.req+"/"+id,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
-  //     })
-  //   });
-  // }
-
-  // //Method to test error handling.
-  // register():Observable<any>
-  // {
-  //   //Giving incorrect URL.
-  //   return this.http.get<any>('https://localhost:44311/api/Customers')
-  //          .pipe(catchError(this.manageError));
-  // }
+ 
   
 
-  // //Method to handle errors.
-  // private manageError(err_response:HttpErrorResponse)
-  // {
-  //   if(err_response.error instanceof ErrorEvent)
-  //   console.error('Client Side Error:',err_response.error.message);
-  //   else
-  //   console.error('Server Side Error:',err_response);
+  //Method  to create a new Users.
+  createUser(UserReg:UserReg[]):Observable<UserReg[]>
+  {
+    return this.http.post<UserReg[]>(this.req,UserReg,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+        
+      })
+    });
+  }
 
-  //   return throwError('There is a little problem while processing your request.Sorry for the inconvenience');
+  //Method to update an existing Users.
+  updateUser(id:number,UserReg:UserReg[]):Observable<any>
+  {
     
-  // }
+    return this.http.put<any>(this.req+"/"+id,UserReg,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 
+
+  //Method to delete an existing Users.
+  deleteUser(id:number):Observable<any>
+  {
+    return this.http.delete<any>(this.req+"/"+id,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+      })
+    });
+  }
 }
