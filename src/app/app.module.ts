@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { HomeComponent } from './home/home.component';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
+import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     routingComponents,
     PaymentPageComponent,
-    HomeComponent
+    HomeComponent,
+    ConfirmationPageComponent,
+    PassengerDetailsComponent
     
    
   ],

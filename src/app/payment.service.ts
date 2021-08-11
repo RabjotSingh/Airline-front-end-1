@@ -2,8 +2,6 @@ import { Payment } from 'src/app/models/Payment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-//Importing both pipeable operator.
-import {catchError} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -25,17 +23,17 @@ export class paymentService
   
 
   // //Method  to create a new Customer.
-  // createUser(Customer:Customer):Observable<Customer>z
-  // {
-  //   return this.http.post<Customer>(this.req,Customer,{
-  //     headers:new HttpHeaders({
-  //       'Content-Type':'application/json;charset=UTF-8',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Method':'*'
+  createUser(player:Player):Observable<Player>
+  {
+    return this.http.post<Player>(this.req,player,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
         
-  //     })
-  //   });
-  // }
+      })
+    });
+  }
 
   // //Method to update an existing Customer.
   // updateUser(id:number,Customer:Customer):Observable<any>
