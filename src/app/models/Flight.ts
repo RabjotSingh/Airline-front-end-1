@@ -8,11 +8,9 @@ export class Flight {
     depart: Date | undefined ;
     arrive : Date | undefined;
     duration: Time | undefined ; 
-    bClass: Boolean | undefined ;
-    eClass: Boolean | undefined ;
 
-    constructor( flightNo: number| undefined , from: string  ,  to: string,depart: Date | undefined ,arrive : Date| undefined  , duration:Time | undefined  ,
-      bClass: Boolean| undefined, eClass: Boolean| undefined )
+
+    constructor( flightNo: number| undefined , from: string  ,  to: string,depart: Date | undefined ,arrive : Date| undefined  , duration:Time | undefined   )
       {
         this.flightNo=flightNo;
         this.from=from;
@@ -20,6 +18,4 @@ export class Flight {
         this.depart=depart;
         this.arrive=arrive;
         this.duration=duration;
-        this.bClass=bClass;
-        this.eClass=eClass;
       }}
