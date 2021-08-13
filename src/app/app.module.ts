@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
     PaymentPageComponent,
     HomeComponent,
     ConfirmationPageComponent,
+
  
     
    

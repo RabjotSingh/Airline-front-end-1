@@ -1,15 +1,8 @@
-export class Status {
-        
-    statusId: number | undefined ;
-    seatNo: string = '';
-    seatStatus: Boolean | undefined;
+export class Status {  
+    bookedSeatNo: string = '';
     flightNo: number | undefined ;
-  
-
-constructor(statusId: number | undefined ,seatNo: string ,  seatStatus: Boolean | undefined , flightNo: number | undefined  )
+constructor(bookedSeatNo: string , flightNo: number | undefined  )
   {
-    this.statusId=statusId;
-    this.seatNo=seatNo;
-    this.seatStatus=seatStatus;
+    this.bookedSeatNo=bookedSeatNo;
     this.flightNo=flightNo;
   }}
