@@ -12,7 +12,7 @@ export class FlightService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/Flight";
+ readonly req:string="https://localhost:44346/api/Flights";
 
 
   //Method to get the list of all Customers from the API.

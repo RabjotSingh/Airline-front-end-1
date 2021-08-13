@@ -5,15 +5,15 @@
 </head>
 
 <div class="container">
-  
+<form [formGroup]="flightsearchform" (ngSubmit)="get_api()"> 
     <input type="radio" name="radio1"><strong style="padding-left: 7px;">One Way</strong>
     <input type="radio" name="radio1" style="margin-left:20px"><strong style="padding-left: 7px;">Return</strong>
   
 
     <div class="row">
-        <div class="col-lg-2">
-            <label for="exampleFlgFrom"><strong>FROM</strong></label>
-            <select class="form-control custom-select" formControlName="from" id="exampleFlgFrom">
+        <div class="col-lg-3">
+            <label for="sourcelocation"><strong>FROM</strong></label>
+            <select class="form-control custom-select" id="from" name="from" formControlName="from">
                 <option class="text-white bg-warning">
                     Select City
                   </option>
@@ -198,9 +198,9 @@
               
             </select>
         </div>
-        <div class="col-lg-2">
-            <label for="exampleFlgTo"><strong>TO</strong></label>
-            <select class="form-control custom-select" formControlName="from" id="exampleFlgTo">
+        <div class="col-lg-3">
+            <label for="destinationlocation"><strong>TO</strong></label>
+            <select class="form-control custom-select" id="to" name="to" formControlName="to">
                 <option class="text-white bg-warning">
                     Select City
                   </option>
@@ -385,41 +385,25 @@
                   
                 </select>
         </div>
-        <div class="col-lg-2">
-            <label for="exampleDep"><strong>DEPARTURE</strong></label> 
-            <input class="form-control" id="Dep" placeholder="Choose Date and Time" formControlName="departure" type="date">
+        <div class="col-lg-3">
+            <label for="departuredate"><strong>DEPARTURE</strong></label> 
+            <input class="form-control" id="depart" name="departuredate" formControlName="depart" placeholder="Choose Date and Time" type="date">
         </div>
-        <div class="col-lg-2">
-            <label for="exampleReturn" name="return" disabled><strong>RETURN</strong></label> 
-                  <input class="form-control" id="Arv" placeholder="Choose Date and Time" formControlName="arrive" type="date">
+        <div class="col-lg-3">
+            <label for="returndate" name="return" disabled><strong>RETURN</strong></label> 
+                  <input class="form-control" id="arrive" name="arrive" formControlName="arrive" placeholder="Choose Date and Time"  type="date">
         </div>
-        <div class="col-lg-2">
-            <label for="NoOfpassenger"><strong>NO OF PASSENGERS</strong></label> 
-                  <input class="form-control" id="NoPass" placeholder="" formControlName="NoPass" type="number">
-        </div>
-        <div class="col-lg-1">
-            <label for="exampleFlgTo"><strong>CLASS</strong></label> <select class="form-control custom-select" formControlName="to" id="exampleFlgTo" style="width: 120px;">
-                <option class="text-white bg-warning">
-                  SELECT CLASS
-                </option>
-                <option value="Eco">
-                  Economy
-                </option>
-                <option value="Eco">
-                    Business
-                  </option>
-                </select>
-        </div>
+        
     </div>  <!--End of first row-->
 
 
-<div class="row">
-    <div class="col-lg-3">
-        <button type="button" class="btn btn-info">Search for Flights</button>
+    <div class="row">
+      <div class="col-lg-3">
+          <button type="submit" class="btn btn-info">Search for Flights</button>
+      </div>
     </div>
-</div>
     
-    
+</form>    
     
 </div>
 
