@@ -1,4 +1,3 @@
-
 <app-header></app-header>
 <div class="col-md-7" style="margin:auto;margin-bottom: 80px; margin-top: 90px;">
  <div class="card card-outline-secondary">
@@ -6,96 +5,127 @@
       <h3 class="mb-0">User Registration</h3>
     </div>
     <div class="card-body">
-      <form autocomplete="off" class="form" role="form">
-
+      <form class="form" role="form "
+       [formGroup]="userform" (ngSubmit)="post_api(userform.value)">
         <div class="form-group row">
-            <label class="col-lg-3 col-form-label form-control-label">Title</label>
+            <label for ="title" class="col-lg-3 col-form-label form-control-label">Title<span style="color:red">*</span></label>
             <div class="col-lg-9">
-
-                <select class="form-control" id="title" size="0">
+                <select class="form-control" id="title" size="0" formControlName="title">
                     <option value="Mr">Mr</option>
                     <option value="Mrs">Mrs</option>
                     <option value="Miss">Miss</option>
                 </select>
-
             </div>
           </div>
 
-
         <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">First name</label>
+          <label for="fnameid" class="col-lg-3 col-form-label form-control-label">First name<span style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="text" value="">
+            <input class="form-control" type="text" value="" id="fnameid" formControlName="fname">
           </div>
+          <div *ngIf="userform.controls.fname.invalid && (userform.controls.fname.dirty || userform.controls.fname.touched)"class="alert alert-danger">
+            <div *ngIf="userform.controls.fname.errors?.required">
+              <small>  First name is required.</small>
+            </div>
+            <div *ngIf="userform.controls.fname.errors?.pattern">
+              <small>  Please enter a valid First name.</small>
+            </div>
+        </div>
         </div>
         <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+          <label for="lnameid" class="col-lg-3 col-form-label form-control-label">Last name<span style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="text" value="">
+            <input class="form-control" type="text" value="" id="lnameid" formControlName="lname">
           </div>
+          <div *ngIf="userform.controls.lname.invalid && (userform.controls.lname.dirty || userform.controls.lname.touched)"class="alert alert-danger">
+            <div *ngIf="userform.controls.lname.errors?.required">
+              <small>  Last name is required.</small>
+            </div>
+            <div *ngIf="userform.controls.lname.errors?.pattern">
+              <small> Please enter a valid Last name. </small>
+            </div>
+        </div>
         </div>
 
         <div class="form-group row">
-            <label class="col-lg-3 col-form-label form-control-label">Date Of Birth</label>
+            <label for="dobid" class="col-lg-3 col-form-label form-control-label">Date Of Birth<span style="color:red">*</span></label>
             <div class="col-lg-9">
-              <input class="form-control" type="date" value="">
+              <input class="form-control" type="date" value="" id="dobid" formControlName="dob">
             </div>
+            <div *ngIf="userform.controls.dob.invalid && (userform.controls.dob.dirty || userform.controls.dob.touched)"class="alert alert-danger">
+              <div *ngIf="userform.controls.dob.errors?.required">
+                  Date of Birth is required.
+              </div>
+          </div>
           </div>
         <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">Email</label>
+          <label label for="emailid" class="col-lg-3 col-form-label form-control-label">Email<span style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="email" value="">
+            <input class="form-control" type="email" value="" id="emailid" formControlName="emailId">
           </div>
+          <div *ngIf="userform.controls.emailId.invalid && (userform.controls.emailId.dirty || userform.controls.emailId.touched)"class="alert alert-danger">
+            <div *ngIf="userform.controls.emailId.errors?.required">
+                Email id is required.
+            </div>
+            <div *ngIf="userform.controls.emailId.errors?.email">
+                Please enter a valid Email id.
+            </div>
+        </div>
         </div>
         
         <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">Phone Number</label>
+          <label label for="phoneid" class="col-lg-3 col-form-label form-control-label">Phone Number<span style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="number" value="">
+            <input class="form-control" type="text" value="" id="phoneid" formControlName="phoneNo">
           </div>
-        </div>
-
-        <div class="form-group row">
-        <label class="col-lg-3 col-form-label form-control-label">Gender</label>
-        <div class="col-lg-9">
-            <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-secondary">
-                                        <input autocomplete="off" checked id="blue" name="options" type="radio">
-                                            Male
-                                    </label> 
-                                    <label class="btn btn-secondary">
-                                        <input autocomplete="off" id="red" name="options" type="radio">
-                                            Female
-                                    </label>                   
+          <div *ngIf="userform.controls.phoneNo.invalid && (userform.controls.phoneNo.dirty || userform.controls.phoneNo.touched)"class="alert alert-danger">
+            <div *ngIf="userform.controls.phoneNo.errors?.required">
+                Phone No is required.
             </div>
-          </div>
-          </div>
+            <div *ngIf="userform.controls.phoneNo.errors?.pattern">
+                Please enter 10 digit valid Phone No.
+            </div>
+        </div>
+        </div>
 
-
-       
+      
+        <div class="form-group row">
+          <label  for="passid" class="col-lg-3 col-form-label form-control-label">Password<span style="color:red">*</span></label>
+          <div class="col-lg-9">
+            <input class="form-control" type="password" value="" id="passid" formControlName="password"> 
+                                      <small class="form-text text-muted" id="passwordHelpBlock">Your password must be 5-20 characters long.It should contain letters, numbers and atleast one special characters.</small>
+          </div>
+          <div *ngIf="userform.controls.password.invalid && (userform.controls.password.dirty || userform.controls.password.touched)"class="alert alert-danger">
+            <div *ngIf="userform.controls.password.errors?.required">
+                Password is required.
+            </div>
+        </div>
+        </div>
+         <div class="form-group row">
+          <label for="cpassid" class="col-lg-3 col-form-label form-control-label">Confirm Password<span style="color:red">*</span></label>
+          <div class="col-lg-9">
+            <input class="form-control" type="password" value="" id="cpassid" >
+          </div>
+         <div *ngIf="userform.controls.cpassword.invalid && (userform.controls.cpassword.dirty || userform.controls.cpassword.touched)"class="alert alert-danger">
+            <div *ngIf="userform.controls.cpassword.errors?.required">
+                Confirm Password is required.
+            </div> 
+            <div  *ngIf="userform.controls.cpassword.value!=userform.controls.password.value && userform.controls.cpassword.dirty">
+                Both the passwords are not matching
+              </div>
+        </div> 
+        </div> 
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"><span style="color:red">*</span></label>
+          <div class="col-lg-9">
         
-        <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">Password</label>
-          <div class="col-lg-9">
-            <input class="form-control" type="password" value=""> 
-                                      <small class="form-text text-muted" id="passwordHelpBlock">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
-          <div class="col-lg-9">
-            <input class="form-control" type="password" value="">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-lg-3 col-form-label form-control-label"></label>
-          <div class="col-lg-9">
-            <input class="btn btn-secondary" type="reset" value="Cancel" style="margin-right: 20px;"> 
-                <input class="btn btn-primary" type="button" value="Submit">
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-primary" [disabled]="userform.invalid" style="margin: 30px;">Submit</button>
           </div>
         </div>
       </form>
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+<app-footer>
+</app-footer>

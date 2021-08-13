@@ -12,7 +12,7 @@ export class userregService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/UserReg";
+ readonly req:string="https://localhost:44346/api/UserRegs";
 
 
   //Method to get the list of all Users from the API.
