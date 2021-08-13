@@ -36,9 +36,4 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onSubmit()
-  {
-    this.get_api();
-  }
-
 }
