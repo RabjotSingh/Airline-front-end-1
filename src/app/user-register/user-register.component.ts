@@ -23,6 +23,7 @@ export class UserRegisterComponent implements OnInit {
     this.msg="Successfully created"
     //Logging the response received from web api.
     console.log(res);
+    alert("Your account has been created successfully");
     })
 
   }
@@ -33,8 +34,18 @@ export class UserRegisterComponent implements OnInit {
     emailId: new FormControl("", [Validators.required, Validators.email]),
     dob: new FormControl(null, [Validators.required]),
    // gender: new FormControl("",[Validators.required]),
-    phoneNo: new FormControl(null,[Validators.required, Validators.pattern("[0-9]{10}")]),
-    password: new FormControl("", [Validators.required]),
-   // cpassword: new FormControl("", [Validators.required])
+    phoneNo: new FormControl(null,[Validators.required, Validators.pattern("^[0-9]{10}$")]),
+    password: new FormControl("", [Validators.required,Validators.minLength(8), Validators.maxLength(30),Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]),
+    cpassword: new FormControl("", [Validators.required])
   })
+
+  ConfirmPasswordValidator():boolean{
+    if(this.userform.controls.cpassword?.value==this.userform.controls.password?.value && this.userform.controls.cpassword?.dirty){
+      return false
+    }
+    else
+    { 
+      return true
+    }
+  }
 }
