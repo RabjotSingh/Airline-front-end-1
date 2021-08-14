@@ -15,6 +15,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
+import { SeatSystemComponent } from './seat-system/seat-system.component';
 
 
 
@@ -27,6 +28,7 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
     PaymentPageComponent,
     HomeComponent,
     ConfirmationPageComponent,
+    SeatSystemComponent,
 
  
     
