@@ -1,177 +1,50 @@
+<style>
+th, td
+{ 
+    width: 300px; 
+    text-align:center; 
+    border:1px solid black; 
+    padding:5px 
+}
+</style>
+
 <app-header></app-header>
 <br>
 <br>
 <br>
 <div class="container">
-    <form>
-        <div class="row">
-            <div class="col-lg-1">
-                <label for="S.no"><strong>S.no</strong></label>
+    <table>
+        <thead>
+            <tr>
+                <th class="col-lg-3">Ticket ID</th>
+                <th class="col-lg-3">TRAVEL ROUTE</th>
+                <th class="col-lg-3">PRINT TICKET</th>
+                <th class="col-lg-3">DELETE BOOKING</th>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <form (ngSubmit) = "deletebooking()">
+    <table>
+        <tbody>
+            <div class = "row">
+                <tr> 
+                <td  class="col-lg-3" *ngFor="let item of Ticket_data">
+                    {{item.ticketId}}
+                </td>
+                <td class="col-lg-3" *ngFor="let items of Flight_data">
+                    {{items.from}} to {{items.to}} <br>
+                </td>
+                <td class="col-lg-3">
+                    <button class="btn btn-success btn">Print Ticket</button>
+                </td>
+                <td class="col-lg-3">
+                    <button class="btn btn-danger btn">Delete Booking</button>
+                </td>
+                </tr>
             </div>
-            <div class="col-lg-1">
-                <label for="bookingid"><strong>Booking ID</strong></label>
-            </div>
-            <div class="col-lg-2">
-                <label for="dateofbooking"><strong>Booking Date</strong></label>
-            </div>
-            <div class="col-lg-2">
-                <label for="from"><strong>FROM</strong></label>
-            </div>
-            <div class="col-lg-2">
-                <label for="to"><strong>TO</strong></label>
-            </div>
-            <div class="col-lg-2">
-                <label><strong>PRINT TICKET</strong></label>
-            </div>
-            <div class="col-lg-2">
-                <label><strong>DELETE BOOKING</strong></label>
-            </div>
-        </div>
-        <br>
-        <div class ="row">
-            <div class="col-lg-1">
-                <p> 1 </p>
-            </div>
-            <div class="col-lg-1">
-                <p> 101 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> 15-08-2021 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Indore (IDR) </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Mumbai (BOM) </p>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-success float -center"> Print </button>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-danger float -center"> Cancel </button>
-            </div>
-        </div>
-        <br>
-        <div class ="row">
-            <div class="col-lg-1">
-                <p> 1 </p>
-            </div>
-            <div class="col-lg-1">
-                <p> 101 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> 15-08-2021 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Indore (IDR) </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Mumbai (BOM) </p>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-success float -center"> Print </button>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-danger float -center"> Cancel </button>
-            </div>
-        </div>
-        <br>
-        <div class ="row">
-            <div class="col-lg-1">
-                <p> 1 </p>
-            </div>
-            <div class="col-lg-1">
-                <p> 101 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> 15-08-2021 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Indore (IDR) </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Mumbai (BOM) </p>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-success float -center"> Print </button>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-danger float -center"> Cancel </button>
-            </div>
-        </div>
-        <br>
-        <div class ="row">
-            <div class="col-lg-1">
-                <p> 1 </p>
-            </div>
-            <div class="col-lg-1">
-                <p> 101 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> 15-08-2021 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Indore (IDR) </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Mumbai (BOM) </p>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-success float -center"> Print </button>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-danger float -center"> Cancel </button>
-            </div>
-        </div>
-        <br>
-        <div class ="row">
-            <div class="col-lg-1">
-                <p> 1 </p>
-            </div>
-            <div class="col-lg-1">
-                <p> 101 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> 15-08-2021 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Indore (IDR) </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Mumbai (BOM) </p>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-success float -center"> Print </button>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-danger float -center"> Cancel </button>
-            </div>
-        </div>
-        <br>
-        <div class ="row">
-            <div class="col-lg-1">
-                <p> 1 </p>
-            </div>
-            <div class="col-lg-1">
-                <p> 101 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> 15-08-2021 </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Indore (IDR) </p>
-            </div>
-            <div class="col-lg-2">
-                <p> Mumbai (BOM) </p>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-success float -center"> Print </button>
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-danger float -center"> Cancel </button>
-            </div>
-        </div>
-        <br>
+        </tbody>
+    </table>
     </form>
 </div>
 <app-footer></app-footer>
