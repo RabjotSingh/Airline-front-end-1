@@ -35,6 +35,6 @@ export class PaymentPageComponent implements OnInit {
   
   post_api(data:any):void
   {
-    this.obj.createUser(data).subscribe(data=>{ this.msg="Successfully created " + data })
+    this.obj.createUser(data).subscribe(data=>{ this.msg="Successfully created " })
   }
 }
