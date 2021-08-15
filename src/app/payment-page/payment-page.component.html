@@ -6,6 +6,7 @@
 
                 <div class="card card-outline-secondary">
                     <div class="card-body">
+                      <h5 style="color: red;"><strong> Please add an Amount greater than or equal to Ticket Fare</strong></h5>
                       <h3 class="text-center">Credit Card Payment</h3>
                       <hr>
                       <div class="alert alert-info">
@@ -16,14 +17,14 @@
                           <label for="cc_name">Card Holder's Name</label> 
                                               <input class="form-control" id="cardHolderName" formControlName="cardHolderName" pattern="\w+ \w+.*" required="required" title="First and last name" type="text">
                                               <span class="error" *ngIf="paymentsform.controls.cardHolderName.invalid&&(paymentsform.controls.cardHolderName.touched)" >This field is mandatory</span>
-                                              
+                                               &NonBreakingSpace;<br>
                                               <span class="error" *ngIf="paymentsform.controls.cardHolderName.invalid&&(paymentsform.controls.cardHolderName.touched && paymentsform.controls.cardHolderName.dirty)" >Card Holder name is Invalid</span>
                                             </div>
                         <div class="form-group">
                           <label for="cardnumber">Card Number</label> 
                                               <input autocomplete="off" id="cardno" formControlName="cardno" class="form-control" pattern="\d{16}" required="" title="Credit card number" type="text">
                                               <span class="error" *ngIf="paymentsform.controls.cardno.invalid&&(paymentsform.controls.cardno.touched)" >This field is mandatory</span>
-                                              &nbsp;
+                                              &nbsp;<br>
                                               <span class="error" *ngIf="paymentsform.controls.cardno.invalid&&(paymentsform.controls.cardno.touched && paymentsform.controls.cardno.dirty)" >Card Number is Invalid</span>
                                             </div>
                         <div class="form-group row">
@@ -101,6 +102,7 @@
                           <div class="col-md-4">
                             <input autocomplete="off" class="form-control" id="cvv" formControlName="cvv" maxlength="3" pattern="\d{3}" placeholder="cvv" required="" title="Three digits on the back of your card" type="text">
                             <span class="error" *ngIf="paymentsform.controls.cvv.invalid&&(paymentsform.controls.cvv.touched)" >This field is mandatory</span>
+                            &NonBreakingSpace;<br>
                             <span class="error" *ngIf="paymentsform.controls.cvv.invalid&&(paymentsform.controls.cvv.touched && paymentsform.controls.cvv.dirty)" >CVV is in Invalid format</span>
                           </div>
                         </div>

@@ -6,17 +6,17 @@
 
 <div class="container">
 <form [formGroup]="flightsearchform" (ngSubmit)="get_api()"> 
+
     <input type="radio" name="radio1"><strong style="padding-left: 7px;">One Way</strong>
     <input type="radio" name="radio1" style="margin-left:20px"><strong style="padding-left: 7px;">Return</strong>
-  
 
     <div class="row">
         <div class="col-lg-3">
             <label for="sourcelocation"><strong>FROM</strong></label>
             <select class="form-control custom-select" id="from" name="from" formControlName="from">
-                <option class="text-white bg-warning">
-                    Select City
-                  </option>
+              <option value="" class="text-white bg-warning">
+                Select City
+              </option>
               <option value="IXA">
                 Agartala (IXA)
               </option>
@@ -198,10 +198,11 @@
               
             </select>
         </div>
+        <div *ngIf="userform.controls.title.errors?.required"></div>
         <div class="col-lg-3">
             <label for="destinationlocation"><strong>TO</strong></label>
             <select class="form-control custom-select" id="to" name="to" formControlName="to">
-                <option class="text-white bg-warning">
+                <option value="" class="text-white bg-warning">
                     Select City
                   </option>
                   <option value="IXA">
@@ -398,7 +399,7 @@
 
 
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col-lg-4">
           <button type="submit" class="btn btn-info">Search for Flights</button>
       </div>
     </div>

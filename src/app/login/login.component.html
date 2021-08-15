@@ -1,0 +1,38 @@
+
+<app-header></app-header>
+<div class="col-md-10 offset-md-1" style="margin-bottom: 80px;margin-top: 160px;">
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">USER LOGIN</h3>
+        </div>
+        <div class="card-body">
+        <form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="form-group">
+                <label for="inputEmail">Email<span style="color:red">*</span></label>
+                <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Enter Email">
+                    <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)" class="alert alert-danger">
+                        <div *ngIf="loginForm.controls.email.errors?.required">
+                            <small>Email Address is required.</small>
+                        </div>
+                        <div *ngIf="loginForm.controls.email.errors?.email">
+                            <small>Please enter a valid Email Address.</small>
+                          </div>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <label for="inputPassword">Password<span style="color:red">*</span></label>
+                    <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Enter Password">
+                    <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="alert alert-danger">
+                        <div *ngIf="loginForm.controls.password.errors?.required">
+                            <small>Password is required.</small>
+                        </div>
+                    </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success btn-lg" [disabled]="loginForm.invalid">Login</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

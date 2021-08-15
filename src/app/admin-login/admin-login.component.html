@@ -5,19 +5,32 @@
       <h3 class="mb-0">ADMIN LOGIN</h3>
     </div>
     <div class="card-body">
-      <form autocomplete="off" class="form" id="formLogin" name="formLogin" role="form">
+      
+      <form class="user-login" [formGroup]="adminlogin" (ngSubmit)="onLogin()">
+        
         <div class="form-group">
-          <label for="adminusername">Username</label> 
-          <input class="form-control" id="adminusername" name="adminusername" required="" type="text" [(ngModel)] = "adminusername">
+          <label for="adminusernameid" >Username<span style="color:red">*</span></label>
+          <input class="form-control" id="adminusernameid" formControlName="adminusername" placeholder="Enter username">
+              <div *ngIf="adminlogin.controls.adminusername.invalid && (adminlogin.controls.adminusername.dirty || adminlogin.controls.adminusername.touched)" class="alert alert-danger">
+                  <div *ngIf="adminlogin.controls.adminusername.errors?.required">
+                      <small>Username is required.</small>
+                  </div>
+              </div>
         </div>
         <div class="form-group">
-          <label for="adminpassword">Password</label> 
-          <input class="form-control" id="adminpassword" name="adminpassword" required="" type="password" [(ngModel)] = "adminpassword">
+          <label for="adminpassword">Password<span style="color:red">*</span></label>
+          <input type="password" class="form-control" id="adminpassword" formControlName="adminpassword" placeholder="Enter Password">
+          <div *ngIf="adminlogin.controls.adminpassword.invalid && (adminlogin.controls.adminpassword.dirty || adminlogin.controls.adminpassword.touched)" class="alert alert-danger">
+              <div *ngIf="adminlogin.controls.adminpassword.errors?.required">
+                  <small>Password is required.</small>
+              </div>
+          </div>
+         
         </div>
         
-                          <button class="btn btn-success btn-lg float-right" type="submit" (click)="logIn()">Login</button>
+        <button type="submit" class="btn btn-success btn-lg" [disabled]="adminlogin.invalid">Login</button>
       </form>
-    </div><!--/card-block-->
+    </div>
   </div>
 </div>
 

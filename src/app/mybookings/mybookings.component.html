@@ -1,0 +1,50 @@
+<style>
+th, td
+{ 
+    width: 300px; 
+    text-align:center; 
+    border:1px solid black; 
+    padding:5px 
+}
+</style>
+
+<app-header></app-header>
+<br>
+<br>
+<br>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th class="col-lg-3">Ticket ID</th>
+                <th class="col-lg-3">TRAVEL ROUTE</th>
+                <th class="col-lg-3">PRINT TICKET</th>
+                <th class="col-lg-3">DELETE BOOKING</th>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <form (ngSubmit) = "deletebooking()">
+    <table>
+        <tbody>
+            <div class = "row">
+                <tr> 
+                <td  class="col-lg-3" *ngFor="let item of Ticket_data">
+                    {{item.ticketId}}
+                </td>
+                <td class="col-lg-3" *ngFor="let items of Flight_data">
+                    {{items.from}} to {{items.to}} <br>
+                </td>
+                <td class="col-lg-3">
+                    <button class="btn btn-success btn" onclick="alert('Your Ticket is being Downloaded')">Print Ticket</button>
+                </td>
+                <td class="col-lg-3">
+                    <button class="btn btn-danger btn">Delete Booking</button>
+                </td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+    </form>
+</div>
+<app-footer></app-footer>
