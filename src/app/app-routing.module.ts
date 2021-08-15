@@ -62,7 +62,8 @@ const routes: Routes = [
 
   {
     path: 'MyBookings',
-    component:MybookingsComponent
+    component:MybookingsComponent,
+    canActivate:[UserGuard]
   }
   
 ];

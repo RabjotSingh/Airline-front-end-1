@@ -37,6 +37,7 @@ export class UserRegisterComponent implements OnInit {
   {
     this.obj.createUser(data).subscribe(res=>{
     //Logging the response received from web api.
+    console.log("from post");
     console.log(res);
     alert("Your account has been created successfully");
     })
@@ -68,6 +69,6 @@ export class UserRegisterComponent implements OnInit {
     this.userform.value.password = bcrypt.hashSync(this.userform.value.password, bcrypt.genSaltSync());
     console.log(this.userform.value);
     this.post_api(this.userform.value)
-    alert
+    
   }
 }

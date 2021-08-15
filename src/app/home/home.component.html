@@ -198,6 +198,7 @@
               
             </select>
         </div>
+        <div *ngIf="userform.controls.title.errors?.required"></div>
         <div class="col-lg-3">
             <label for="destinationlocation"><strong>TO</strong></label>
             <select class="form-control custom-select" id="to" name="to" formControlName="to">
