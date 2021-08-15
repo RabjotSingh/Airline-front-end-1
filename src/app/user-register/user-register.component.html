@@ -5,24 +5,32 @@
       <h3 class="mb-0">User Registration</h3>
     </div>
     <div class="card-body">
-      <form class="form" role="form " [formGroup]="userform" (ngSubmit)="post_api(userform.value)">
+      <form class="form" role="form " [formGroup]="userform" (ngSubmit)="onSubmit()">
         <div class="form-group row">
           <label for="title" class="col-lg-3 col-form-label form-control-label">Title<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <select class="form-control" id="title" size="0" formControlName="title">
+            <select class="form-control" id="title" size="0" placeholder="Select title" formControlName="title">
+              <option value="">Select title</option>
               <option value="Mr">Mr</option>
               <option value="Mrs">Mrs</option>
               <option value="Miss">Miss</option>
             </select>
+            <div
+              *ngIf="userform.controls.title.invalid && (userform.controls.title.dirty || userform.controls.title.touched)"
+              class="alert alert-danger">
+              <div *ngIf="userform.controls.title.errors?.required">
+                <small> Title is required.</small>
+              </div>
+            </div>
           </div>
         </div>
-
         <div class="form-group row">
           <label for="fnameid" class="col-lg-3 col-form-label form-control-label">First name<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="text" value="" id="fnameid" formControlName="fname">
+            <input class="form-control" type="text" value="" id="fnameid" formControlName="fname"
+              placeholder="Enter first name">
           </div>
           <div
             *ngIf="userform.controls.fname.invalid && (userform.controls.fname.dirty || userform.controls.fname.touched)"
@@ -39,7 +47,8 @@
           <label for="lnameid" class="col-lg-3 col-form-label form-control-label">Last name<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="text" value="" id="lnameid" formControlName="lname">
+            <input class="form-control" type="text" value="" id="lnameid" formControlName="lname"
+              placeholder="Enter last name">
           </div>
           <div
             *ngIf="userform.controls.lname.invalid && (userform.controls.lname.dirty || userform.controls.lname.touched)"
@@ -57,7 +66,7 @@
           <label for="dobid" class="col-lg-3 col-form-label form-control-label">Date Of Birth<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="date" value="" id="dobid" formControlName="dob">
+            <input class="form-control" type="date" value="" id="dobid" formControlName="dob" max="{{Todaysdate}}">
           </div>
           <div *ngIf="userform.controls.dob.invalid && (userform.controls.dob.dirty || userform.controls.dob.touched)"
             class="alert alert-danger">
@@ -70,16 +79,17 @@
           <label label for="emailid" class="col-lg-3 col-form-label form-control-label">Email<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="email" value="" id="emailid" formControlName="emailId">
+            <input class="form-control" type="email" value="" id="emailid" placeholder="Enter email"
+              formControlName="emailId">
           </div>
           <div
             *ngIf="userform.controls.emailId.invalid && (userform.controls.emailId.dirty || userform.controls.emailId.touched)"
             class="alert alert-danger">
             <div *ngIf="userform.controls.emailId.errors?.required">
-              <small>Email id is required.</small>
+              <small>Email Address is required.</small>
             </div>
             <div *ngIf="userform.controls.emailId.errors?.email">
-              <small>Please enter a valid Email id.</small>
+              <small>Please enter a valid Email Address.</small>
             </div>
           </div>
         </div>
@@ -88,7 +98,8 @@
           <label label for="phoneid" class="col-lg-3 col-form-label form-control-label">Phone Number<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="text" value="" id="phoneid" formControlName="phoneNo">
+            <input class="form-control" type="text" value="" id="phoneid" placeholder="Enter phone number"
+              formControlName="phoneNo">
           </div>
           <div
             *ngIf="userform.controls.phoneNo.invalid && (userform.controls.phoneNo.dirty || userform.controls.phoneNo.touched)"
@@ -101,15 +112,15 @@
             </div>
           </div>
         </div>
-
-
-         <div class="form-group row">
+        <div class="form-group row">
           <label for="passid" class="col-lg-3 col-form-label form-control-label">Password<span
               style="color:red">*</span></label>
           <div class="col-lg-9">
-            <input class="form-control" type="password" value="" id="passid" formControlName="password">
-            <small class="form-text text-muted" >Your password must be 8-30 characters long.It
-              should contain atleast one digit,one special characters,one uppercase Character,one lowercase Character.</small>
+            <input class="form-control" type="password" value="" id="passid" placeholder="Enter password"
+              formControlName="password">
+            <small class="form-text text-muted">Your password must be atleast 8 characters long.It
+              should contain atleast one digit,one special characters,one uppercase Character,one lowercase
+              Character.</small>
           </div>
           <div
             *ngIf="userform.controls.password.invalid && (userform.controls.password.dirty || userform.controls.password.touched)"
@@ -117,14 +128,9 @@
             <div *ngIf="userform.controls.password.errors?.required">
               <small>Password is required.</small>
             </div>
-            <div *ngIf="userform.controls.password?.errors?.minlength"><small >Password should have
-                atleast 8
-                characters</small></div>
-            <div *ngIf="userform.controls.password?.errors?.maxlength"><small >Password should not
-                exceed 30
-                characters</small></div>
-            <div *ngIf="userform.controls.password?.errors?.pattern"><small >
-                <ul>Password Must contain
+            <div *ngIf="userform.controls.password?.errors?.pattern"><small>
+                <ul>Password should contain
+                  <li>At least eight characters</li>
                   <li>At least one digit</li>
                   <li>At least one special character</li>
                   <li>At least one uppercase Character</li>
@@ -133,30 +139,35 @@
               </small>
             </div>
           </div>
-        </div> 
-          <div class="form-group row">
-          <label for="cpassid" class="col-lg-3 col-form-label form-control-label">Confirm Password<span
-              style="color:red">*</span></label>
+        </div>
+        <div class="form-group row">
+          <label for="cpasswordid" class="col-lg-3 col-form-label form-control-label">
+            <!-- <div class="form-group">
+          <label for="cpassword"><p class="glyphicon glyphicon-plane"></p> -->
+            Confirm Password<span style="color:red">*</span>
+          </label>
           <div class="col-lg-9">
-            <input class="form-control" type="password" value="" id="cpassid" formControlName="cpassword">
+            <input id="cpasswordid" type="password" formControlName="cpassword" class="form-control"
+              placeholder="Re-enter password" />
           </div>
-         <div
-            *ngIf="userform.controls.cpassword.invalid && (userform.controls.cpassword.dirty || userform.controls.cpassword.touched)"
+          <div
+            *ngIf="!userform.get('cpassword')?.valid && (userform.get('cpassword')?.dirty || userform.get('cpassword')?.touched) "
             class="alert alert-danger">
-            <div *ngIf="userform.controls.cpassword.errors?.required">
-              <small> Confirm Password is required.</small>
-            </div>
-            <div *ngIf="userform.controls.cpassword?.value!=userform.controls.password.value">
-              <small>Both the passwords are not matching</small>
+            <div *ngIf="userform.get('cpassword')?.errors?.required">
+              <small>Confirm Password is required</small>
             </div>
           </div>
-        </div> 
+
+          <div
+            *ngIf="!(userform.get('cpassword')?.value==userform.get('password')?.value) && userform.get('cpassword')?.dirty"
+            class="alert alert-danger"><small>Confirm Password is not matching</small></div>
+        </div>
         <div class="form-group row">
           <label class="col-lg-3 col-form-label form-control-label"><span style="color:red">*</span></label>
           <div class="col-lg-9">
 
-            <button type="reset" class="btn btn-primary">Reset</button>
-            <button type="submit" class="btn btn-primary" [disabled]="userform.invalid || ConfirmPasswordValidator()"
+            <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+            <button type="submit" class="btn btn-success btn-lg " [disabled]="userform.invalid || confirmpasswordvalidator()"
               style="margin: 30px;">Submit</button>
           </div>
         </div>

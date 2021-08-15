@@ -16,6 +16,7 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { SeatSystemComponent } from './seat-system/seat-system.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -29,6 +30,9 @@ import { SeatSystemComponent } from './seat-system/seat-system.component';
     HomeComponent,
     ConfirmationPageComponent,
     SeatSystemComponent,
+    LoginComponent,
+    UserRegisterComponent,
+    DeleteFlightComponent
 
  
     

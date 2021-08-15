@@ -1,9 +1,10 @@
+import { AdminvalidatordataService } from './../adminvalidatordata.service';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, Routes } from '@angular/router';
+import { Router, Routes, RouterModule } from '@angular/router';
 import { FooterComponent } from './../footer/footer.component';
 import { HeaderComponent } from './../header/header.component';
-
+import {FormControl,FormGroup,Validators} from '@angular/forms';
 
 
 @Component({
@@ -12,22 +13,20 @@ import { HeaderComponent } from './../header/header.component';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-
-  alert:boolean = false;
-  adminusername!: string;
-  adminpassword!: string;
-  
-
-  constructor(private router: Router) { }
+  constructor(private router:Router,private data:AdminvalidatordataService) { }
 
   ngOnInit(): void {
   }
-
-  logIn(){
-    if(this.adminusername == "admin" && this.adminpassword == "admin"){
-      console.log(this.adminusername);
-      console.log(this.adminusername);
+  adminlogin= new FormGroup({
+    adminusername : new FormControl("",[Validators.required]),
+    adminpassword : new FormControl("",[Validators.required])
+})
+onLogin(){
+    if((this.adminlogin.value.adminusername) == "admin" && (this.adminlogin.value.adminpassword) == "admin"){
+      console.log(this.adminlogin.value.adminusername);
+      console.log(this.adminlogin.value.adminpassword);
       this.router.navigate(['/FlightRegister']);
+      this.data.setadminvalidation(true);
     }
     else{
       alert("Please Enter Valid Details");
