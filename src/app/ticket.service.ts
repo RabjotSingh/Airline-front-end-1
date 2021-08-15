@@ -12,7 +12,7 @@ export class ticketService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/Ticket";
+ readonly req:string="https://localhost:44346/api/Tickets";
 
 
   //Method to get the list of all Tickets from the API.

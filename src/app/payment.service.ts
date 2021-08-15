@@ -12,7 +12,7 @@ export class paymentService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/Payments";
+  readonly req:string="https://localhost:44346/api/Payments";
 
 
   //Method to get the list of all Customers from the API.
