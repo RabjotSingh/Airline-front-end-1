@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { SeatSystemComponent } from './seat-system/seat-system.component';
 import { LoginComponent } from './login/login.component';
+import { MybookingsComponent } from './mybookings/mybookings.component';
 
 
 
@@ -32,7 +33,8 @@ import { LoginComponent } from './login/login.component';
     SeatSystemComponent,
     LoginComponent,
     UserRegisterComponent,
-    DeleteFlightComponent
+    DeleteFlightComponent,
+    MybookingsComponent
 
  
     

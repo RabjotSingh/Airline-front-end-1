@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { LoginComponent } from './login/login.component';
+import { MybookingsComponent } from './mybookings/mybookings.component';
 
 
 const routes: Routes = [
@@ -56,6 +57,12 @@ const routes: Routes = [
   {
     path: 'Userlogin',
     component:LoginComponent
+  
+  },
+
+  {
+    path: 'MyBookings',
+    component:MybookingsComponent
   }
   
 ];
@@ -66,4 +73,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent, AdminLoginComponent, FlightRegisterComponent, DeleteFlightComponent, 
-  UserRegisterComponent,PaymentPageComponent,SeatSystemComponent,LoginComponent]
+  UserRegisterComponent,PaymentPageComponent,SeatSystemComponent,LoginComponent,MybookingsComponent]
+
