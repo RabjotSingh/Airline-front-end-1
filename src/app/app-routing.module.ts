@@ -8,6 +8,7 @@ import { FlightRegisterComponent } from './flight-register/flight-register.compo
 import { HomeComponent } from './home/home.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'seatSystem',
     component:SeatSystemComponent
+  },
+  {
+    path: 'pnrSearch',
+    component: PnrSearchComponent
   }
   
 ];

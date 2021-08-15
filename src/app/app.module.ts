@@ -16,6 +16,8 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { SeatSystemComponent } from './seat-system/seat-system.component';
+import { PnrSearchComponent } from './pnr-search/pnr-search.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 
@@ -29,6 +31,8 @@ import { SeatSystemComponent } from './seat-system/seat-system.component';
     HomeComponent,
     ConfirmationPageComponent,
     SeatSystemComponent,
+    PnrSearchComponent,
+    ConfirmationComponent,
 
  
     
