@@ -12,7 +12,7 @@ export class ticketService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/Ticket";
+ readonly req:string="https://localhost:44346/api/Tickets";
 
 
   //Method to get the list of all Tickets from the API.
@@ -33,6 +33,20 @@ export class ticketService
       })
     });
   }
+
+
+  //method to get by id
+ viewsPnrStatus(id:any)
+  {
+    return this.http.get("https://localhost:44346/api/Tickets?id="+id);
+  }
+
+  viewsPnrStatusById(id:number): Observable<any> {
+
+     console.log(`${this.req}/${"Ticket"}/${id}`);
+     return this.http.get(`${this.req}/${"Ticket"}/${id}`);
+   }
+ 
 
   //Method to update an existing Ticket.
   updateUser(id:number,Ticket:Ticket[]):Observable<any>
