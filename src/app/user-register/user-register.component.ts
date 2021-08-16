@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { userregService } from '../user-reg.service';
 import { UserReg } from '../models/UserReg';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import * as bcrypt from 'bcryptjs';
+//import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-user-register',
@@ -66,7 +66,7 @@ export class UserRegisterComponent implements OnInit {
   }
   onSubmit(): void {
     console.log(this.userform.value);
-    this.userform.value.password = bcrypt.hashSync(this.userform.value.password, bcrypt.genSaltSync());
+    //this.userform.value.password = bcrypt.hashSync(this.userform.value.password, bcrypt.genSaltSync());
     console.log(this.userform.value);
     this.post_api(this.userform.value)
     
