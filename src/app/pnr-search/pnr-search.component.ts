@@ -12,7 +12,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PnrSearchComponent implements OnInit {
 
-  ticketData:Ticket[]=[];
+  //ticketData:Ticket[]=[];
+
+  ticketData:Ticket={
+    ticketId: 0,
+  uId: 0,
+  pId: 0 ,
+  flightNo: 0, 
+  paymentId: 0,
+  roundTrip : true,
+  ticketStatus:""} 
 
   constructor(private http:HttpClient,private obj:ticketService) { }
     
@@ -22,29 +31,30 @@ export class PnrSearchComponent implements OnInit {
   
 
    onSubmit() {
-   this.viewsPnrStatus()
+   this.getApiById(this.ticketData.paymentId);
   }
   ngOnInit(): void {
-    this.get_api();
+   // this.get_api();
   }
 
-  getApiById():void
-  {   console.log(this.ticketData);
-    this.obj.().subscribe(data=>{
-      this.ticketData=data;
-     // this.flag_get=true;this.flag_post=false;this.flag_put=false;this.flag_delete=false;this.flag_register=false;
-     // Logging the response recieved from web api.
-      console.log(this.ticketData);
-    });
+
+
+  getApiById(data:any) : void
+  {   
+    this.obj.viewsPnrStatusById(data.paymentId).subscribe((data) => (this.ticketData = data));
+     console.log('In service');
+    console.log(this.ticketData);
   }
 
-  get_api():void
-  {   console.log(this.ticketData);
-    this.obj.getAllUsers().subscribe(data=>{
-      this.ticketData=data;
+  //get_api():void
+  //{   console.log(this.ticketData);
+    //this.obj.getSearchedPnr(id).subscribe(data=>{
+      //this.ticketData=data;
      // this.flag_get=true;this.flag_post=false;this.flag_put=false;this.flag_delete=false;this.flag_register=false;
      // Logging the response recieved from web api.
-      console.log(this.ticketData);
-    });
-  }
+     // console.log(this.ticketData);
+  //  });
+  //}
+//}//
+
 }

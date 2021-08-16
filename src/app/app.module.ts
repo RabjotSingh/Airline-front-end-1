@@ -16,13 +16,10 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { SeatSystemComponent } from './seat-system/seat-system.component';
-<<<<<<< HEAD
 import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
-=======
 import { LoginComponent } from './login/login.component';
 import { MybookingsComponent } from './mybookings/mybookings.component';
->>>>>>> 485119a1f23a5c7b7a2a947ca8b3bd4a0ec085bf
 
 
 
@@ -36,15 +33,12 @@ import { MybookingsComponent } from './mybookings/mybookings.component';
     HomeComponent,
     ConfirmationPageComponent,
     SeatSystemComponent,
-<<<<<<< HEAD
     PnrSearchComponent,
     ConfirmationComponent,
-=======
     LoginComponent,
     UserRegisterComponent,
     DeleteFlightComponent,
     MybookingsComponent
->>>>>>> 485119a1f23a5c7b7a2a947ca8b3bd4a0ec085bf
 
  
     
