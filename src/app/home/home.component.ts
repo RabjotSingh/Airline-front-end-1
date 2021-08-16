@@ -12,7 +12,7 @@ import { Flight } from '../models/Flight';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+x:any=0
   flights:Flight[]=[];
 
   flightsearchform =new FormGroup({
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     to:new FormControl("",[Validators.required]),
     depart:new FormControl("",[Validators.required]),
     arrive:new FormControl("",[Validators.required,]),
+    roundTrip:new FormControl("",[Validators.required,])
   });
 
   constructor(private obj:FlightService) { }

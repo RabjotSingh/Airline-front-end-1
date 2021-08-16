@@ -20,6 +20,7 @@ import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { LoginComponent } from './login/login.component';
 import { MybookingsComponent } from './mybookings/mybookings.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 
 
@@ -38,7 +39,8 @@ import { MybookingsComponent } from './mybookings/mybookings.component';
     LoginComponent,
     UserRegisterComponent,
     DeleteFlightComponent,
-    MybookingsComponent
+    MybookingsComponent,
+    UserAccountComponent
 
  
     
