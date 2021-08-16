@@ -54,7 +54,7 @@ const routes: Routes = [
     path: 'pnrSearch',
     component: PnrSearchComponent,
     
-    canActivate:[UserGuard]
+   // canActivate:[UserGuard]
   },
   {
     path: 'Home',
@@ -80,5 +80,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent, AdminLoginComponent, FlightRegisterComponent, DeleteFlightComponent, 
-  UserRegisterComponent,PaymentPageComponent,SeatSystemComponent,LoginComponent,MybookingsComponent]
+  UserRegisterComponent,PaymentPageComponent,SeatSystemComponent,LoginComponent,MybookingsComponent, PnrSearchComponent]
 
