@@ -5,6 +5,7 @@ import {FormControl,FormGroup,Validators} from '@angular/forms';
 import { VERSION } from "@angular/core";
 import { Router } from "@angular/router";
 import { UservalidatordataService } from '../uservalidatordata.service';
+import * as bcrypt from 'bcryptjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,16 +23,17 @@ export class LoginComponent implements OnInit {
     password : new FormControl("",[Validators.required])
 })
 
-  userauthenticator(data: any) {
+  userauthenticator(formdata: any) {
    
 
     for (let item of this.User_data) {
-      if (item.emailId == data.email) {
+      if (item.emailId == formdata.email) {
         this.uservalidator=true;
        
-        console.log(data.value);
-        console.log(this.User_data);
-        if (item.password == data.password) {
+        console.log(item.password );
+        console.log(formdata.password);
+        
+        if (bcrypt.compareSync(formdata.password,item.password )) {
           this.data.setuservalidation(true);
           this.router.navigate(["/Home"]);
         }
@@ -39,7 +41,6 @@ export class LoginComponent implements OnInit {
           return alert('Incorrect password.');
         }
       }
-      
     }
     if(this.uservalidator==false){
       return alert('No account exist with this Email Address');
