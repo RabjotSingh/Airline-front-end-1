@@ -3,7 +3,7 @@
 <app-header></app-header>
 </div>
 
-<form class="form" role="form" [formGroup] = "FlightRegister" (ngSubmit) = "post_api(FlightRegister.value)">
+<form class="form" role="form" [formGroup] = "FlightRegister" (ngSubmit) = "onSubmit()">
 <!--col-md-6 col-sm-6 col-lg-6-->
 
 
@@ -65,7 +65,7 @@
          
 
         <div class="card-body">
-          <form [formGroup] = "FlightRegister">
+          <form [formGroup] = "FlightRegister"class="form" role="form " (ngSubmit)="onSubmit()">
             <div class="form-group">
           <div class="row mt-4">
             <div class="col-sm-6 pb-3">

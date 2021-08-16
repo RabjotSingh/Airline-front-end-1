@@ -30,12 +30,14 @@ export class FlightRegisterComponent implements OnInit {
   })
 
   onSubmit() {
-    console.warn(this.FlightRegister.value)
+    
+    console.log(this.FlightRegister.value);
+    //this.userform.value.password = bcrypt.hashSync(this.userform.value.password, bcrypt.genSaltSync());
+    console.log(this.FlightRegister.value);
+    this.post_api(this.FlightRegister.value)
   }
 
 
-  
-  
 
   constructor(private obj:FlightService) { }
 
@@ -44,13 +46,15 @@ export class FlightRegisterComponent implements OnInit {
 msg:any
   post_api(data:any):void
   {
-    this.obj.createFlight(data).subscribe(data=>{
-    this.msg="Successfully created ";
-    //Logging the response received from web api.
-    console.log(data);
-    })
-  }
+    this.obj.createUser(data).subscribe(data=>{
+      //Logging the response received from web api.
+      console.log("from post");
+      console.log(data);
+      alert("Flight has been added successfully");
+  })
 
   
+
+}
 
 }
