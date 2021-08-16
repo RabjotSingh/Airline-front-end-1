@@ -14,6 +14,7 @@ import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 import { LoginComponent } from './login/login.component';
 import { MybookingsComponent } from './mybookings/mybookings.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { AddPassengerComponent } from './add-passenger/add-passenger.component';
 
 
 const routes: Routes = [
@@ -77,9 +78,13 @@ const routes: Routes = [
 {
   path : 'UserDashboard',
   component : UserAccountComponent,
+},
+{
+  path : 'AddPassenger',
+  component : AddPassengerComponent,
 }
 
-  
+
 ];
 
 @NgModule({

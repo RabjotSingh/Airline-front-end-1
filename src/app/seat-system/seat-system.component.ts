@@ -12,4 +12,8 @@ export class SeatSystemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit(){
+    console.log("10");
+  }
+
 }

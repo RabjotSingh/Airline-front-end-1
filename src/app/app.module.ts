@@ -21,6 +21,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { LoginComponent } from './login/login.component';
 import { MybookingsComponent } from './mybookings/mybookings.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { AddPassengerComponent } from './add-passenger/add-passenger.component';
 
 
 
@@ -40,7 +41,8 @@ import { UserAccountComponent } from './user-account/user-account.component';
     UserRegisterComponent,
     DeleteFlightComponent,
     MybookingsComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    AddPassengerComponent
 
  
     
