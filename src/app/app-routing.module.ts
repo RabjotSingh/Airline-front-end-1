@@ -10,6 +10,7 @@ import { FlightRegisterComponent } from './flight-register/flight-register.compo
 import { HomeComponent } from './home/home.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 import { LoginComponent } from './login/login.component';
 import { MybookingsComponent } from './mybookings/mybookings.component';
 
@@ -47,7 +48,12 @@ const routes: Routes = [
   },
   {
     path: 'seatSystem',
-    component:SeatSystemComponent,
+    component:SeatSystemComponent
+  },
+  {
+    path: 'pnrSearch',
+    component: PnrSearchComponent,
+    
     canActivate:[UserGuard]
   },
   {

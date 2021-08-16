@@ -34,6 +34,20 @@ export class ticketService
     });
   }
 
+
+  //method to get by id
+ viewsPnrStatus(id:any)
+  {
+    return this.http.get("https://localhost:44346/api/Tickets?id="+id);
+  }
+
+  viewsPnrStatusById(id:number): Observable<any> {
+
+     console.log(`${this.req}/${"Ticket"}/${id}`);
+     return this.http.get(`${this.req}/${"Ticket"}/${id}`);
+   }
+ 
+
   //Method to update an existing Ticket.
   updateUser(id:number,Ticket:Ticket[]):Observable<any>
   {

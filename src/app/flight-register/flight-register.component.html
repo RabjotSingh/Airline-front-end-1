@@ -2,6 +2,8 @@
 
 <app-header></app-header>
 </div>
+
+<form class="form" role="form" [formGroup] = "FlightRegister" (ngSubmit) = "post_api(FlightRegister.value)">
 <!--col-md-6 col-sm-6 col-lg-6-->
 
 
@@ -60,6 +62,8 @@
           <div class="card-header">
             <h3 class="mb-0">ADD FLIGHT</h3>
           </div>
+         
+
         <div class="card-body">
           <form [formGroup] = "FlightRegister">
             <div class="form-group">
@@ -68,14 +72,7 @@
               <label for="exampleflight">Flight Number</label> 
                 <input class="form-control" formControlName="flightNo" id="flightNo" placeholder="Enter Flight No (Eg: 6B-9087)" type="text">
             </div>
-            <div class="col-sm-3 pb-3">
-              <label for="exampleBussClass">Business Class Seats</label> 
-                <input class="form-control" id="BussClass" formControlName="business" placeholder="Enter No of Seats Available" type="number">
-            </div>
-            <div class="col-sm-3 pb-3">
-                <label for="exampleEcoClass">Economy Class Seats</label> 
-                  <input class="form-control" id="EcoClass" formControlName="economy" placeholder="Enter No of Seats Available" type="number">
-              </div>
+           
 
               <div class="col-sm-6 pb-3">
                 <label for="exampleFlgTo">From</label> <select class="form-control custom-select" formControlName="from" id="exampleFlgTo">
@@ -456,21 +453,22 @@
             <div class="row mt-4">
             <div class="col-sm-6 pb-3">
                 <label for="exampleDep"><strong>Departure</strong></label> 
-                  <input class="form-control" id="Dep" placeholder="Choose Date and Time" formControlName="departure" type="datetime-local">
+                  <input class="form-control" id="depart" placeholder="Choose Date and Time" formControlName="departure" type="datetime-local">
               </div>
 
               <div class="col-sm-6 pb-3">
                 <label for="exampleArv"><strong>Arrival</strong></label> 
-                  <input class="form-control" id="Arv" placeholder="Choose Date and Time" formControlName="arrive" type="datetime-local">
+                  <input class="form-control" id="arrive" placeholder="Choose Date and Time" formControlName="arrive" type="datetime-local">
               </div>
 
               </div>
-              <div class="row mt-4">
+             <!-- <div class="row mt-4">
               <div class="col-sm-6 pb-3">
                 <label for="exampleDuration">Duration</label> 
-                  <input class="form-control" id="Duration" placeholder="Duration of Flight" formControlName="duration" type="time">
+                  <input class="form-control" id="duration" placeholder="Duration of Flight" formControlName="duration" type="time">
               </div>
-            </div>
+            </div> 
+          -->
             
 
 
@@ -487,7 +485,9 @@
 
 
                 </div>
+
                 </form>
+
                 </div>
                 
                 <div class="row mt-12">
@@ -495,6 +495,7 @@
                   <button class="btn btn-danger btn-lg btn-block" routerLink="/DeleteFlight" type="submit">Click here to delete any flight</button>
                 </div>
                 </div>
+              
 <app-footer></app-footer>
 
                 

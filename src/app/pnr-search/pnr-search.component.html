@@ -1,0 +1,69 @@
+
+<app-header></app-header>
+<form class="form" role="form" [formGroup] = "pnrForm" (ngSubmit) = "onSubmit(vie)">
+
+<div class="search">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-10 col-md-offset-1 search-header">
+       <div class="form-section searchDiv">
+        <div class="row">
+         <div class="col-md-10">
+          <div class="form-group">
+           <input type="text" class="form-control" formControlName ="paymentId" required="" id="paymentId" placeholder="Enter the 10digit PNR Number" >
+           </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPNR">enter pnr NUMBER</label> 
+                <input class="form-control" formControlName ="paymentId" id="inputPNR" required="" type="text" placeholder="Enter the 10digit PNR Number"> 
+                <div *ngIf="pnrForm.controls.paymentId.invalid && (pnrForm.controls.paymentId.dirty || pnrForm.controls.paymentId.touched)"class="alert alert-danger">
+                  <div *ngIf="pnrForm.controls.paymentId.errors?.required">
+                      PNR No is required.
+                  </div>
+              </div>                 
+          </div>
+          <div class="col-md-2">
+        <!--  <button type="button" class="btn btn-default btn-primary" onclick="loadPNRStatus();">Get PNR Status</button> -->
+          <!--  <button class="btn btn-danger btn-lg float-right" type="submit" for>Search!</button>-->
+           <div class="form-group">
+            <button class="btn btn-danger btn-lg float-right" [disabled]="!pnrForm.valid" type="submit" for>Pnr Search</button>
+            
+  
+          </div>
+          
+<table>
+<thead>
+    <tr>
+        <th>P_id</th>
+        <th>Flight No</th>
+        <th>pnr NO</th>
+       
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of ticketData">
+        <td>{{item.pId}}</td>
+        <td>{{item.paymentId}}</td>
+        <td>{{item.paymentId}}</td>
+        
+    </tr>
+</tbody>
+</table>
+<!--<form *ngFor="let country of ticketData"> 
+    <div class="form-group"> 
+        <label>PID</label> 
+        <input name="pId" ngControl="pId" [(ngModel)]="country.pId"> 
+        <label>paymentId</label> 
+        <input name="paymentId" ngControl="paymentId" [(ngModel)]="country.paymentId"> 
+        <label>Flight NO</label> 
+        <input name="flightNo" ngControl="flightNo" [(ngModel)]="country.flightNo"> 
+    </div> 
+</form> -->
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+   </div>

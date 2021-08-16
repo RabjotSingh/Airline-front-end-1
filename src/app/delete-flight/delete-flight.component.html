@@ -1,6 +1,5 @@
 <app-header></app-header>
-
-
+<form class="form" role="form" [formGroup] = "userForm" (ngSubmit) = "delete_api(userForm.value.flightNo)">
 
 <div class="col-md-10 offset-md-1" style="margin-bottom: 80px;margin-top: 140px;">
 <div class="card card-outline-secondary">
@@ -8,18 +7,25 @@
       <h3 class="mb-0">DELETE FLIGHT</h3>
     </div>
     <div class="card-body">
-      <form autocomplete="off" class="form" role="form">
+
         <div class="form-group">
           <label for="inputflightNo">FLIGHT NUMBER</label> 
-              <input class="form-control" id="inputflightNo" required="" type="text" placeholder="Enter Flight No (Eg: 6B-9087)"> 
-                             
+              <input class="form-control" formControlName ="flightNo" id="inputflightNo" required="" type="text" placeholder="Enter Flight No (Eg: 6B-9087)"> 
+              <div *ngIf="userForm.controls.flightNo.invalid && (userForm.controls.flightNo.dirty || userForm.controls.flightNo.touched)"class="alert alert-danger">
+                <div *ngIf="userForm.controls.flightNo.errors?.required">
+                    Flight No is required.
+                </div>
+            </div>                 
         </div>
         <div class="form-group">
-          <button class="btn btn-danger btn-lg float-right" type="submit">Delete</button>
+          <button class="btn btn-danger btn-lg float-right" type="submit" for>Delete</button>
+          
+
         </div>
-      </form>
+     
     </div>
   </div>
   </div>
+</form>
 
   <app-footer></app-footer>

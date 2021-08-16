@@ -12,19 +12,33 @@ export class FlightService
   //Creating an instance of HttpClient inside the constructor.
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
- readonly req:string="https://localhost:44346/api/Flights";
-
+  req:string="https://localhost:44346/api/Flights";
+  res:string="http://localhost:4200/FlightRegister";
+  
 
   //Method to get the list of all Customers from the API.
   getAllUsers():Observable<Flight[]>
   {
     return this.http.get<Flight[]>(this.req);
   }
+
+
   
  //Method  to create a new Flight.
  createUser(Flight:Flight[]):Observable<Flight[]>
  {
    return this.http.post<Flight[]>(this.req,Flight,{
+     headers:new HttpHeaders({
+       'Content-Type':'application/json;charset=UTF-8',
+       'Access-Control-Allow-Origin':'*',
+       'Access-Control-Allow-Method':'*'
+       
+     })
+   });
+ }
+ createFlight(Flight:Flight[]):Observable<Flight[]>
+ {
+   return this.http.post<Flight[]>(this.res,Flight,{
      headers:new HttpHeaders({
        'Content-Type':'application/json;charset=UTF-8',
        'Access-Control-Allow-Origin':'*',
