@@ -13,6 +13,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 import { LoginComponent } from './login/login.component';
 import { MybookingsComponent } from './mybookings/mybookings.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 
 const routes: Routes = [
@@ -70,7 +71,14 @@ const routes: Routes = [
     path: 'MyBookings',
     component:MybookingsComponent,
     canActivate:[UserGuard]
-  }
+  },
+
+  
+{
+  path : 'UserDashboard',
+  component : UserAccountComponent,
+}
+
   
 ];
 

@@ -14,6 +14,10 @@
     $(this).removeClass("selected");
     listofseats.splice(listofseats.indexOf($(this).attr("id")),1);
     }
+    else if ($(this).hasClass("seat occupied")){
+        listofseats.push($(this).null);
+        
+    }
     else
     {
     $(this).addClass("selected");
