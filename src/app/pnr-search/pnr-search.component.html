@@ -1,10 +1,14 @@
 
 <app-header></app-header>
 <<<<<<< HEAD
+<form class="form" role="form" [formGroup] = "pnrForm" (ngSubmit) = "getApiById()">
+=======
+<<<<<<< HEAD
 <form class="form" role="form" [formGroup] = "pnrForm" (ngSubmit) = "onSubmit()">
 =======
 <form class="form" role="form" [formGroup] = "pnrForm" (ngSubmit) = "getApiById(ticketData.paymentId)">
 >>>>>>> c7699d6172844ad10a0e6ac92b3095e6fbfba210
+>>>>>>> ef31ff6eea0f48841e0874da9b5d3c23a47a4fe2
 
 <div class="search">
     <div class="container">
@@ -14,13 +18,14 @@
         <div class="row">
          <div class="col-md-10">
           <div class="form-group">
-           <input type="text" class="form-control" formControlName ="paymentId" required="" id="paymentId" placeholder="Enter the 10digit PNR Number" >
+           
            </div>
           </div>
 
           <div class="form-group">
             <label for="inputPNR">enter pnr NUMBER</label> 
-                <input class="form-control" formControlName ="paymentId" id="inputPNR" required="" type="text" placeholder="Enter the 10digit PNR Number"> 
+            <input type="text" class="form-control" formControlName ="paymentId" required="" id="paymentId" placeholder="Enter the 10digit PNR Number" >
+               <!-- <input class="form-control" formControlName ="paymentId" id="inputPNR" required="" type="text" placeholder="Enter the 10digit PNR Number"> -->
                 <div *ngIf="pnrForm.controls.paymentId.invalid && (pnrForm.controls.paymentId.dirty || pnrForm.controls.paymentId.touched)"class="alert alert-danger">
                   <div *ngIf="pnrForm.controls.paymentId.errors?.required">
                       PNR No is required.
@@ -40,20 +45,40 @@
 <thead>
     <tr>
         <th>P_id</th>
+        <th>pnr No</th>
         <th>Flight No</th>
-        <th>pnr NO</th>
+        <th>Ticket No</th>
        
     </tr>
 </thead>
-<tbody>
-    <tr *ngFor="let item in ticketData">
+<tbody >
+    <tr *ngFor="let item of ticketData" >
         <td>{{item.pId}}</td>
         <td>{{item.paymentId}}</td>
         <td>{{item.flightNo}}</td>
+        <td>{{item.ticketId}}</td>
         
     </tr>
 </tbody>
 </table>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            
+           
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let it of passengerData" >
+            <td>{{it.fullName}}</td>
+            
+            
+        </tr>
+    </tbody>
+    </table>
+
 <!--<form *ngFor="let country of ticketData"> 
     <div class="form-group"> 
         <label>PID</label> 

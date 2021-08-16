@@ -31,7 +31,7 @@ const routes: Routes = [
   {
     path:'FlightRegister',
     component:FlightRegisterComponent,
-    canActivate:[AdminGuard]
+    //canActivate:[AdminGuard]
   },
   {
     path:'DeleteFlight',

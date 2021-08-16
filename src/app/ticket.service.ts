@@ -13,6 +13,7 @@ export class ticketService
   constructor(private http:HttpClient) { }
   //Variable to store the request URL for accessing API.
  readonly req:string="https://localhost:44346/api/Tickets";
+ 
 
 
   //Method to get the list of all Tickets from the API.
@@ -38,8 +39,10 @@ export class ticketService
   //method to get by id
  viewsPnrStatusById(id:any): Observable<any>
   {
-    return this.http.get("https://localhost:44346/api/Tickets?id="+id);
-  }
+   return this.http.get("https://localhost:44346/api/Tickets/GetTicketByPaymentId/"+id);}
+   //https://localhost:44346/api/Tickets/GetTicketByPaymentId/101"+id);
+  // return this.http.get<any>(this.req+"/"+id)
+  
 
  // viewsPnrStatusById(id:number): Observable<any> {
 
